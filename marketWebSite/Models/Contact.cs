@@ -22,7 +22,7 @@ namespace marketWebSite.Models
         public string Email { get; set; }
 
         [Display(Name = "Введите сообщение")]
-        [StringLength(30, ErrorMessage = "Текст не менее 30 символов")]
+        [StringLength(30, ErrorMessage = "Текст менее 30 символов")]
         [Required(ErrorMessage = "Вам нужно ввести сообщение")]
         public string Message { get; set; }
 

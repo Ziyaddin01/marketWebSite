@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using marketWebSite.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace marketWebSite.Controllers
 {
@@ -7,6 +8,15 @@ namespace marketWebSite.Controllers
         public IActionResult Index() //contacts
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Check(Contact contact) 
+        {
+            if(ModelState.IsValid) {
+                return Redirect("/");
+            }
+            return View("Index");
         }
     }
 }
